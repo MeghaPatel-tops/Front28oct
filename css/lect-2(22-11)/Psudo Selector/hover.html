@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #first:hover{
+            background-color: black;
+            color: white;
+        }
+        a:link{
+            color: green;
+        }
+        a:visited{
+            color: yellow;
+        }
+        a:hover{
+            color: black;
+        }
+        a:active{
+            color: red;
+        }
+
+
+        p:lang(fr){
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: red;
+        }
+
+        input:focus{
+            height: 50px;
+            width: 300px;
+            background-color: gray;
+            color: white;
+        }
+        
+    </style>
+</head>
+<body>
+    <p id="first" lang="fr">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam nemo consequatur nisi quis ipsam aliquid fugiat deserunt blanditiis aut aspernatur? Pariatur corrupti quaerat iure temporibus incidunt voluptatem vitae adipisci nesciunt?
+    </p>
+    <ul>
+        <!-- //li*5>a#item-${Item-$} -->
+         <li><a href="https://example.com" id="item-1">Item-1</a></li>
+<li><a href="https://google.com" id="item-2">Item-2</a></li>
+        <!-- <li><a href="#" id="item-1">Item-1</a></li>
+        <li><a href="#" id="item-2">Item-2</a></li>
+        <li><a href="#" id="item-3">Item-3</a></li>
+        <li><a href="#" id="item-4">Item-4</a></li>
+        <li><a href="#" id="item-5">Item-5</a></li> -->
+    </ul>
+
+    <h1>:foucs to show this effect enter in text box</h1>
+    <input type="text" name="" id="">
+</body>
+</html>
