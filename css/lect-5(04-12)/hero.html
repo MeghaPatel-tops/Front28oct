@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .main{
+            width: 100%;
+            
+        }
+        .navbar{
+            padding: 50px;
+            background-color: black;
+            position: sticky;
+            top: 10px;
+            z-index: 1;
+        }
+        .hero-img{
+            width: 100%;
+            height: 400px;
+            position: relative;
+        }
+        .hero-img img{
+            width: 100%;
+            height: 100%;
+            opacity: 0.7;
+            
+        }
+        .hero-text{
+            position: absolute;
+            top: 50%;
+            left: 40%;
+            color: white;
+            text-align: center;
+            
+        }
+        .hero-text h1{
+            font-size: 3em;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: black;
+        }
+        .hero-text p{
+            font-size: 1em;
+            font-weight: 800;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+        }
+        .fixed-div{
+            padding: 100px;
+            border: 10px solid black;
+            position: fixed;
+            right: 10px;
+            top: 200px;
+            background-color: brown;
+            z-index: 1;
+        }
+        #forth{
+            mask-image: url(m-logo-removebg-preview.png);
+            mask-position: center;
+            mask-size: 300px 400px;
+            mask-repeat: no-repeat;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+
+        <div class="fixed-div">
+            <h1>fixed div</h1>
+        </div>
+        
+        <div class="hero-img">
+            <img src="../lect-4(29-11)/hero.jpg" alt="">
+            <div class="hero-text">
+                <h1>Welcome to app</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+            </div>
+        </div>
+        <div class="navbar">
+
+        </div>
+        <div class="hero-img">
+            <img src="../lect-4(29-11)/hero.jpg" alt="">
+            <div class="hero-text">
+                <h1>Welcome to app</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+            </div>
+        </div>
+        <div class="hero-img" id="forth">
+            <img src="../lect-4(29-11)/hero.jpg" alt="">
+            <div class="hero-text">
+                <h1>Welcome to app</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+            </div>
+        </div>
+        <div class="hero-img">
+            <img src="../lect-4(29-11)/hero.jpg" alt="">
+            <div class="hero-text">
+                <h1>Welcome to app</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+            </div>
+        </div>
+        <div class="hero-img">
+            <img src="../lect-4(29-11)/hero.jpg" alt="">
+            <div class="hero-text">
+                <h1>Welcome to app</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
