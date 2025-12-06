@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            font-size: 2em;
+        }
+        .flex-box{
+            display: flex;
+            gap:10px;
+            flex-wrap: wrap;
+            padding: 10px;
+            border: 10px solid black;
+        }
+        .box{
+            padding: 10px;
+            background-color: gray;
+            flex: 100%;
+        }
+         @media screen and (min-width:567px) {
+            h1{
+                font-size: 4em;
+            }
+            .flex-box{
+                 
+                 flex-direction: row;
+            }
+            .box{
+                flex:30%;
+            }
+        }
+        @media screen and (min-width:768px) {
+            h1{
+                font-size: 4em;
+            }
+            .flex-box{
+                 
+                 flex-direction: row;
+            }
+            .box{
+            padding: 10px;
+            background-color: gray;
+            flex: 25%;
+            }
+        }
+       
+        @media screen and (min-width:1200px) {
+            h1{
+                font-size: 6em;
+            }
+             .flex-box{
+                 
+                 flex-direction: row;
+                
+            }
+            .box{
+            padding: 10px;
+            background-color: gray;
+            flex:20%;
+        }
+        }
+    </style>
+</head>
+<body>
+    <h1>responsive text</h1>
+    <div class="flex-box">
+        <div class="box" id="box-10"></div>
+        <div class="box" id="box-10"></div>
+        <div class="box" id="box-10"></div>
+        <div class="box" id="box-10"></div>
+        <div class="box" id="box-10"></div>
+        <div class="box" id="box-10"></div>
+        <div class="box" id="box-10"></div>
+        <div class="box" id="box-10"></div>
+        <div class="box" id="box-10"></div>
+        <div class="box" id="box-10"></div>
+        <div class="box" id="box-10"></div>
+        <div class="box" id="box-10"></div>
+    </div>
+</body>
+</html>
