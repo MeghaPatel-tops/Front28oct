@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type:none;
+    text-decoration: none;
+}
+
+.student-nav{
+    padding: 0px 20px;
+    height: 80px;
+    background-color: rgb(62, 62, 169);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-item{
+   
+    display: flex;
+    gap: 20px;
+    height: 100%;
+    align-items: center;
+}
+.nav-item ul li{
+    padding: 0px 10px;
+    display: inline-block;
+}
+.nav-item img{
+    height: 50px;
+    width: 50px;
+}
+.nav-item li a{
+    color: white;
+}
+.nav-button{
+    padding: 10px;
+    background-color: aqua;
+}
+.nav-button button{
+    padding: 10px 20px;
+    background-color: white;
+    color: rgb(62, 62, 169);
+    border-radius: 10px;
+    border: none;
+
+}
+.container{
+    padding: 100px;
+    background-color: rgb(232, 232, 232);
+    text-align: center;
+}
+.container .title{
+     color: white;
+     text-transform: capitalize;
+     font-weight: bold;
+     background-color: rgb(62, 62, 169);
+     padding: 5px 10px;
+}
+.stack-div{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.stack{
+    color: blue;
+    font-weight: bolder;
+    padding: 20px 200px 20px 20px;
+    border: 2px solid  gray;
+    background-color: white;
+    border-radius: 10px;
+    flex: 30%;
+
+}
+.stack:hover{
+     border: 5px solid  blue;
+}
