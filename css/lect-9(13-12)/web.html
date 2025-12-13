@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .main{
+            border: 10px solid black;
+            padding: 50px;
+            display: grid;
+            grid-template-areas: 'header header header header header'
+                                  'aside aside section section section'
+                                   
+                                  'footer footer footer footer footer';
+        }
+        .header{
+            grid-area: header;
+            padding: 20px;
+            background-color: aqua;
+            text-align: center;
+        }
+        .Aside{
+            grid-area: aside;
+            padding: 20px 100px;
+            background-color: rgb(195, 236, 120);
+            height: 300px;
+            
+        }
+         .Section{
+            grid-area: section;
+            padding: 50px 20px;
+            background-color: rgb(197, 117, 52);
+            
+        }
+         .Footer{
+            grid-area: footer;
+            padding: 20px;
+            background-color: rgb(197, 52, 139);
+            text-align: center;
+          
+        }
+        ul li{
+              list-style: none;
+              
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            Header
+        </div>
+        <div class="Aside">
+            <ul>
+                <li><a href="">Home-1</a></li>
+                <li><a href="">Home-2</a></li>
+                <li><a href="">Home-3</a></li>
+                <li><a href="">Home-4</a></li>
+                <li><a href="">Home-5</a></li>
+            </ul>
+        </div>
+        <div class="Section">
+            <h1>Lorem Ipsum</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit ipsum id quasi, obcaecati ratione magni consectetur sunt facilis dignissimos culpa numquam asperiores, incidunt nemo accusantium? Blanditiis repudiandae minus ducimus quisquam.</p>
+        </div>
+        <div class="Footer">Footer</div>
+    </div>
+</body>
+</html>
