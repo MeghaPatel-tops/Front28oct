@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.header{
+    background-color: rgb(37, 37, 85);
+    color: white;
+    display: flex;
+    padding: 15px 100px;
+    justify-content: space-between;
+}
+.hero-div{
+    height: 500px;
+    background-image: url(Images/header-1.jpg);
+    background-size: cover;
+}
+.nav{
+    padding: 0px 100px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+.nav-item{
+    padding: 0px 20px;
+}
+.nav-item a{
+    color:  rgb(37, 37, 85);
+    text-decoration: none;
+    font-weight: 300;
+}
+.nav-item button{
+    background-color: transparent;
+    border: 2px solid  rgb(37, 37, 85);
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+#nav-item-end{
+    margin-left: auto;
+}
+.head-text{
+    padding: 150px 100px;
+}
+.head-text h1{
+    font-size: 3em;
+    font-weight: bolder;
+    color: rgb(37, 37, 85);
+   
+}
+.head-text p{
+     margin :30px 0px;
+    font-size: 1.5em;
+    color: rgb(37, 37, 85);
+    line-height: 20px;
+}
+.head-text .btn1{
+    background-color: rgb(37, 37, 85);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+}
+.head-text .btn2{
+    background-color: yellow;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+}
+.form{
+    padding: 50px;
+    background-color: black;
+
+}
+.form input{
+    background-color: transparent;
+    padding: 10px 20px;
+    border: none;
+    border-bottom: 3px solid orangered;
+}
+.form input::placeholder{
+    color: red;
+}
