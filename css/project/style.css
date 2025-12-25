@@ -24,8 +24,9 @@
     gap: 20px;
     justify-content: flex-start;
     align-items: center;
-    position: sticky;
     top: 0;
+    position: sticky;
+    
     
     
 }
@@ -140,7 +141,7 @@
 .about-video{
    margin-top: 100px;
 }
-.about-video img{
+.about-video video{
     height: 100vh;
     width: 100%;
     border-radius: 20px;
@@ -164,4 +165,68 @@
 .team-head .head{
     display: flex;
     gap: 20px;
+}
+/* ========================================Footer======== */
+.footer-div{
+    margin-top: 100px;
+    background-color: rgb(54, 54, 85);
+    padding: 100px;
+    display: flex;
+    gap: 100px;
+}
+.footer-form{
+    background-color:rgb(37, 37, 85) ;
+    padding: 50px;
+    color: white;
+    border-radius: 20px;
+    width: 50%;
+    
+
+}
+.footer-form h2{
+    font-size: bolder;
+}
+.footer-div form{
+    margin-top: 50px ;
+    
+}
+.footer-div form input,button{
+    padding: 10px 30px;
+}
+.footer-div form button{
+    background-color: yellow;
+    border: none;
+}
+.footer-content{
+    display: flex;
+    gap: 100px;
+    
+}
+.footer-content li{
+    list-style: none;
+    padding: 10px 0px;
+}
+.footer-content a{
+    color: white;
+    font-size: 1em;
+    font-weight: bolder;
+   text-decoration: none;
+}
+.footer-content li> button{
+    background-color:rgb(37, 37, 85) ;
+    border: none;
+    padding: 10px;
+    margin: 0px 20px;
+}
+.footer-content li i{
+    color: white;
+}
+.foot-info{
+    background-color:rgb(37, 37, 85) ;
+    color: white;
+    padding: 30px 100px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
 }
