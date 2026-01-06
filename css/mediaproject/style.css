@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+.nav{
+    padding: 0px 100px;
+    background-color: rgb(55, 54, 54);
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    height: 80px;
+    align-items: center;
+}
+
+.logo-div label{
+        font-size: 2em;
+        font-weight: bolder;
+}
+.nav-items ul li{
+    width: 80px;
+    display: inline-block;
+}
+.nav-items li a{
+    color: white;
+}

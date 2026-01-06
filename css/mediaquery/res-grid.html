@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            border: 10px solid black;
+            padding: 50px;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 20px;
+           
+        }
+        .card{
+            height: 250px;
+             /* width: 200px; */
+            border: 5px solid black;
+            border-radius: 20px;
+           
+          
+        }
+          @media screen and (max-width:992px){
+             .main{
+                grid-template-columns: repeat(3,1fr);
+             }
+        }
+         @media screen and (max-width:768px){
+              .main{
+                grid-template-columns: repeat(2,1fr);
+             }
+        }
+          @media screen and (max-width:576px){
+              .main{
+                grid-template-columns: 1fr;
+             }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+    </div>
+</body>
+</html>
