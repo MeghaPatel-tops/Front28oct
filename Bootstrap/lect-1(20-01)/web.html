@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .nav
+        {
+            background-color: black;
+            padding: 10px 100px;
+        }
+        ul li{
+            display: inline-block;
+            width: 100px;
+              text-align: center;
+        }
+        ul li a{
+            color: white;
+        }
+        #drop{
+            position: relative;
+        }
+        .dropmenu{
+            display: none;
+        }
+        .dropmenu{
+            background-color: gray;
+            color: black;
+        }
+        .dropmenu li{
+            padding: 10px 0px;
+        }
+        .dropmenu ul li a{
+          
+            color: black;
+        }
+        #drop:hover .dropmenu{
+            display: block;
+            position: absolute;
+            top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+         <ul>
+            <li><a href="">Item-1</a></li>
+            <li><a href="">Item-2</a></li>
+            <li><a href="">Item-3</a></li>
+            <li  id="drop"><a href="">Item-4 <span><i class="fa-solid fa-caret-down"></i></span></a>
+                <ul class="dropmenu">
+                    <li><a href="">sub-item-1</a></li>
+                    <li><a href="">sub-item-2</a></li>
+                </ul>
+            </li>
+            <li><a href="">Item-5</a></li>
+         </ul>
+    </div>
+
+    <div class="container">
+        <figure>
+            <img src="img1.jpg" alt="">
+            <figcaption>Logo Image</figcaption>
+        </figure>
+    </div>
+</body>
+</html>

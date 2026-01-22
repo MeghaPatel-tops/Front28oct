@@ -5,14 +5,20 @@
     text-decoration: none;
     list-style: none;
 }
+.main{
+     position: relative;
+     height: 100vh;
+}
+
 .nav{
     padding: 0px 100px;
-    background-color: rgb(55, 54, 54);
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: space-between;
     color: white;
     height: 80px;
     align-items: center;
+    z-index: 1;
 }
 
 .logo-div label{
@@ -25,4 +31,80 @@
 }
 .nav-items li a{
     color: white;
+}
+.hero-div{
+     height:100%;
+     width: 100vw;
+     background-image: url(Images/bg_1\ \(1\).jpg);
+     background-color: rgba(0, 0, 0, 0.5);
+     background-blend-mode: darken;
+     background-size: 100% 100%;
+     position: absolute;
+     top: 0;
+     z-index: -1;
+     display: flex;
+     justify-content: center;
+     align-items: center;     
+}
+.hero-div h2{
+    font-size: 3em;
+    color: rgb(214, 202, 180);
+}
+.breafast-div{
+    padding: 30px 50px;
+    display:  flex;
+    position: absolute;
+    bottom: 10px;
+     gap: 20px;
+}
+.col-div{
+    padding: 30px;
+    
+    color: white;
+    text-align: center;
+   
+}
+.col-div img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.breakfast-text{
+    font-size: 0.8em;
+}
+.about{
+    position: static;
+    display: flex;
+     padding: 100px;
+     gap: 50px;
+}
+.about-img{
+    background-color: white;
+    height: 330px;
+    display: flex;
+    align-items: flex-start;
+    
+    gap:10px
+}
+#img2{
+    align-self: flex-end;
+}
+.about-img img{
+    height: 300px;
+    width: 200px;
+}
+.about-text{
+    position: relative;
+    
+    padding: 10px;
+}
+.orange-head{
+    font-size: 4cm;
+    font-family: 'Tangerine', serif;
+    font-weight: bolder;
+    color: orange;
+}
+.black-head{
+    font-size: 1cm;
+    margin-top: -80px;
 }

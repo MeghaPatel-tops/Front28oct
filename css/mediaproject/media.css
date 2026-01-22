@@ -1,15 +1,27 @@
 @media screen and (max-width:768px){
+   
     .nav{
         padding: 10px;
         flex-direction: column;
         height: auto;
         align-items: flex-start;
-        position: relative;
+        position: sticky;
     }
    
     .nav-items ul li{
         padding: 20px 0;
     width: 100%;
     display: block;
+    }
+    .hero-div{
+        position: static;
+        height: 300px;
+    }
+    .breafast-div{
+        position: static;
+        flex-direction: column;
+    }
+    .col-div{
+        color: black;
     }
 }
