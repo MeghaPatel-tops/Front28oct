@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function AgeChecker(){
+               let age = prompt("Enter your Age");
+               if(age >= 18){
+                alert("eligible for voting");
+               }
+               else{
+                 alert("not eligible for voting")
+               }
+        }
+
+        function rolePermision(){
+            let userRole = prompt("Enter Your Role");
+            if(userRole=="student"){
+                alert("Profile manage,assignment download, uploade");
+            }
+            else if(userRole=="faculty"){
+                alert("Lecture manage")
+            }
+            else if(userRole=="counselor"){
+                alert("center mange")
+            }
+            else{
+                alert("unauthorized access");
+            }
+        }
+    </script>
+</head>
+<body>
+      <button onclick="AgeChecker()">
+           Check Eligibility
+      </button>
+      <button onclick="rolePermision()">
+           Check Role & and permision
+      </button>
+</body>
+</html>
