@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <script>
+        //  switch(choice){
+        //     case 1:
+        //         //block
+        //     break; 
+        //     case 2:
+        //         //block
+        //     break; 
+        //     case 3:
+        //         //block
+        //     break;    
+        //     default:
+        //  }
+
+        function cal(op){
+            let num1= document.getElementById('num1').value;
+            let num2 = document.getElementById('num2').value;
+
+            console.log(typeof(num1));
+            num1= Number(num1);
+            num2= Number(num2);
+            
+
+            switch(op){
+                case '+':
+                    alert(`addition =${num1+num2}`);
+                break;    
+                 case '-':
+                    alert(`sub =${num1-num2}`);
+                break;  
+                 case '*':
+                    alert(`mul =${num1*num2}`);
+                break;  
+                 case '/':
+                    alert(`div =${num1/num2}`);
+                break; 
+                default:
+                    alert('invalid choice'); 
+            }
+        }
+   </script>
+</head>
+<body>
+       <fieldset>
+          <legend>Simple Calc</legend>
+          <label for="">Enter input1</label>
+          <input type="text" name="" id="num1">
+          <br><br>
+          <label for="">Enter input2</label>
+          <input type="text" name="" id="num2">
+          <br><br>
+          <button onclick="cal('+')">+</button>
+          <button  onclick="cal('-')">-</button>
+          <button  onclick="cal('*')">*</button>
+          <button  onclick="cal('/')">/</button>
+       </fieldset>
+</body>
+</html>

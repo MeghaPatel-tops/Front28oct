@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+       "use strict";
+
+        //function declartion
+        function display(){
+            console.log("simple function in js");    
+        }
+
+        display();
+
+        //local & outer varible in function scope
+        let cName="tops tech";//Outer varible
+        function printUser(){
+            let uname="megha";//local varible
+            console.log("name=",uname);
+            console.log("company name=",cName);
+            
+        }
+        
+
+        printUser();
+        //console.log("name=",uname);===>genrate error undefine varible
+
+
+
+        //function with parameter
+
+        function addition(a,b){
+            let c= a+b;
+            console.log("addition=",c);
+            
+        }
+
+        addition(100,200);
+        addition(1,4);
+
+        //function with default parameter
+        function mul(a,b,c=1){
+            let m = a*b*c;
+            console.log(m);
+            
+        }
+
+
+        mul(2,4,5);
+        mul(45,7);
+
+
+         let num1 = squareFind(12);
+
+        //function returing value
+        function squareFind(num){
+            return num*num;
+        }
+
+
+       
+
+        console.log(num1);
+
+        console.log(squareFind(34));
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

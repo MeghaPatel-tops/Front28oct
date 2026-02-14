@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function tablePrint(){
+            let num = document.getElementById('num').value;
+            let str="";
+           // str=//5*1=5<br>5*2=10<br>
+            for(i=1;i<=10;i++){
+                //5*1=5
+                console.log(`${num}*${i}=${num*i}<br>`);
+                str+=`${num}*${i}=${num*i}<br>`;
+                
+            }
+              console.log(str);
+
+              document.getElementById('result').innerHTML=str;
+        }
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>Print Table</legend>
+        <label for="">Enter Number</label>
+        <input type="text" name="" id="num">
+        <input type="button" value="Submit" onclick="tablePrint()">
+        <div id="result">
+
+        </div>
+    </fieldset>
+</body>
+</html>
