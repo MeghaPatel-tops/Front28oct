@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            display: flex;
+            gap: 10px;
+        }
+        .box{
+            height: 100px;
+            width: 100px;
+            background-color: rgb(128, 106, 106);
+        }
+    </style>
+    
+</head>
+<body>
+    <p id="para-1">Welcome to tops tech</p>
+    <p id="para-2">Welcome to tops tech</p>
+    <p id="para-3">Welcome to tops tech</p>
+    <p id="para-4">Welcome to tops tech</p>
+    <p id="para-5">Welcome to tops tech</p>
+
+  <div class="main">
+      <div class="box" id="box-1">box-1</div>
+    <div class="box" id="box-2">box-2</div>
+    <div class="box" id="box-3">box-3</div>
+    <div class="box" id="box-4">box-4</div>
+    <div class="box" id="box-5">box-5</div>
+  </div>
+   <button onclick="applyBorderDiv()">Apply border</button>
+   
+    
+    <script>
+        let p1=document.getElementById('para-1');
+
+        console.log(p1);
+        
+        function applyBorderDiv(){
+            let divarray = document.getElementsByClassName('box');
+            console.log(divarray);
+
+            for(i=0;i<divarray.length;i++){
+                // console.log(divarray[i]);
+                // divarray[i].style.border="10px solid brown";
+
+                if(i%2==0){
+                     divarray[i].style.border="10px solid brown";
+                }
+                else{
+                     divarray[i].style.border="10px solid gray";
+                }
+                
+            }
+            
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            border: 10px solid black;
+            height: 200px;
+        }
+        table td{
+            border: 2px solid black;
+            padding: 10px;
+            
+        }
+         table{
+            border-collapse: collapse;
+         }
+    </style>
+</head>
+<body>
+    <button onclick="addPara()">add text into paragra</button>
+    <div class="box" id="box-1">
+
+    </div>
+
+    <button onclick="genTable()">
+        genrate table
+    </button>
+    <div id="table-div"></div>
+  
+
+
+    <script>
+        function addPara(){
+            let data = prompt("Enter yoy text here");
+              
+            document.getElementById('box-1').innerHTML="<p>"+data+"</p>";
+                
+
+        }
+
+        function genTable(){
+            let row= prompt("Enter row");
+            console.log(row);
+            
+            let col = prompt("Enter col");
+            console.log(col);
+            
+            let str=` <table>`;
+                let i,j;
+            for(i=1;i<=row;i++){
+                str+='<tr>'
+                     for(j=1;j<=col;j++){
+                        str+=`<td>tabledata</td>`;
+                     }
+                str+='</tr>'    
+            }  
+            
+            str+='</table>'
+
+            console.log(str);
+            document.getElementById('table-div').innerHTML=str
+        }
+    </script>
+</body>
+</html>
