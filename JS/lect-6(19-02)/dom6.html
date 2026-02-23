@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            padding: 100px;
+            border: 10px solid black;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="main">
+        <button onclick="createPara()">Create paragraph</button>
+    </div>
+
+     <div class="container" id="main1">
+        <p id="sec">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate necessitatibus, odit repellat temporibus beatae repellendus impedit officiis earum cupiditate. Sint eligendi, nisi optio iste nihil cupiditate! Rem illum doloremque temporibus?</p>
+        <button onclick="removePara()">Remove paragraph</button>
+    </div>
+
+    <script>
+        function createPara(){
+            let p1= document.createElement('p');
+            p1.innerText="Welcome to tops tech";
+            console.log(p1);
+            document.getElementById('main').appendChild(p1)
+            
+        }
+
+        function removePara(){
+            let p1= document.getElementById('sec');
+             document.getElementById('main1').removeChild(p1);
+        }
+    </script>
+</body>
+</html>

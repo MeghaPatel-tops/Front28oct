@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 50%;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    
+    <img src="images/banner_1.jpg" alt="" id="img1">
+    <br>
+    <button onclick="filterImage('op')">opacity</button>
+    <button onclick="filterImage('gray')">grayscale</button>
+    <button onclick="filterImage('blur')">blur</button>
+
+
+    <script>
+        function filterImage(type){
+            let img1= document.getElementById('img1');
+
+            if(type=="op"){
+                img1.style.filter="opacity(60%)"
+            }
+            else if(type=="gray"){
+                img1.style.filter="grayscale(80%)"
+            }
+             else if(type=="blur"){
+                img1.style.filter="blur(10px)"
+            }
+            else{
+                img1.style.filter="none"
+            }
+        }
+    </script>
+</body>
+</html>

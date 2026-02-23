@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Button click event</h1>
+    <button id="btn1">Click Me</button>
+   <h1>Change text of input</h1>
+    <input type="text" name="" id="text1">
+    <h1>Key press of textbox</h1>
+    <input type="text" name="" id="text2">
+    <h1>Mousweover</h1>
+    <img src="one.jpg" alt="" height="100px" width="100px" id="img1">
+
+    <script>
+        document.getElementById('btn1').addEventListener('click',function(){
+            alert("btn cliked")
+        })
+
+        document.getElementById('text1').addEventListener('change',function(){
+            console.log(this.value);
+            
+        })
+
+         document.getElementById('text2').addEventListener('keyup',function(){
+            console.log(this.value);
+            
+        })
+        document.getElementById('img1').addEventListener('mousemove',function(){
+             this.setAttribute('height',"200px");
+              this.setAttribute('width',"200px")
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <button id="leftbtn">Left</button>
+     
+     <button id="rightbtn">Right</button>
+
+    <script>
+        let count=0;
+        console.log(count);
+        
+        document.getElementById('rightbtn').addEventListener('click',()=>{
+            console.log("brfr",count);
+            count++;
+            console.log("after",count);
+
+            if(count==3){
+                count=0
+            }
+
+            
+            
+        })
+
+
+         document.getElementById('leftbtn').addEventListener('click',()=>{
+            if(count==0){
+                count=3
+            }   
+            console.log(count);
+            count--;
+            
+              
+
+           
+        })
+    </script>
+</body>
+</html>

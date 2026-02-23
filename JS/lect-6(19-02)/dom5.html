@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .black{
+            height: 500px;
+            width: 100%;
+            background-color: black;
+            color:white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+         .white{
+            height: 500px;
+            width: 100%;
+            background-color: white;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h1{
+            font-size: 4em;
+        }
+    </style>
+</head>
+<body>
+    
+      <button onClick="themeChange()" id="btn">Dark</button>
+      <div class="white" id="main">
+          <h1>Theme Changer </h1>
+      </div>
+
+       <img src="one.jpg" alt="" height="200px" width="300px" id="img1">
+      <button onclick="imageChange()">Image Change</button>
+
+      <script>
+           function themeChange(){
+          
+               let  mainDiv = document.getElementById('main');
+               let oldTheme=mainDiv.getAttribute('class');
+               let newTheme = oldTheme == "white" ? 'black' :'white';
+                mainDiv.setAttribute('class',newTheme);
+                let text=  newTheme == "white" ? 'Dark' :'Light';
+              document.getElementById('btn').innerText=text;
+           }
+
+           function imageChange(){
+              let newSrc= prompt("Enter image name");
+                let img1=document.getElementById('img1');
+                img1.removeAttribute('src');
+                img1.setAttribute('src',newSrc);
+                // img1.setAttribute('height',"550px");
+           }
+      </script>
+</body>
+</html>
