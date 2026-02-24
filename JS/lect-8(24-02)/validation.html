@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            padding: 50px 30px;
+            border: 5px solid black;
+            border-radius: 20px;
+        }
+        .form-group{
+            display: flex;
+            flex-direction: column;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>
+            Registraion form
+        </h1>
+        <form method="post" id="frm1">
+            <div class="form-group" id="er-un">
+                <label for="">Enter Username</label>
+                <input type="text" name="" id="username">
+                 <p id="er-uname" style="color: red;display: none;"></p>
+            </div>
+            <div class="form-group" >
+                <label for="">Enter Email</label>
+                <input type="text" name="" id="email">
+                <p id="er-email" style="color: red;display: none;"></p>
+            </div>
+            <div class="form-group">
+                <input type="text" name="" id="">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="submit" id="submit">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        function validateEmail(email) {
+        return emailRegex.test(email);
+        }
+        document.getElementById('frm1').addEventListener('submit',function(e){
+           e.preventDefault();
+            let txt1 = document.getElementById('username');
+            let email = document.getElementById('email');
+            let emailError = document.getElementById('er-email');
+             let unameError = document.getElementById('er-uname');
+            
+            console.log(txt1.value);
+
+
+            //==============username validation=======================
+             if(txt1.value == ""){
+                unameError.style.display="block";
+                unameError.innerText="Username required";
+                txt1.focus();
+             }
+             else{
+                unameError.style.display="none";
+                 
+             }
+             //===================Email validation===================
+              if(email.value === ""){
+                    emailError.style.display="block";
+                     emailError.innerText="Email required";
+              }
+              else if(validateEmail(email.value)==false){
+                 emailError.style.display="block";
+                  emailError.innerText="Enter valid Email example(abc@example.com)";
+              }
+              else{
+                 emailError.style.display="none";
+                  emailError.innerText="";
+              }
+
+             
+        })
+    </script>
+</body>
+</html>
