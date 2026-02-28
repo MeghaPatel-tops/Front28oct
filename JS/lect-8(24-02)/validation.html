@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        .pbox p{
+            color: red;
+        }
+    </style>
+    <style>
         body{
             height: 600px;
             display: flex;
@@ -40,7 +45,15 @@
                 <p id="er-email" style="color: red;display: none;"></p>
             </div>
             <div class="form-group">
-                <input type="text" name="" id="">
+                <label for="">Enter Password</label>
+                <input type="text" name="" id="pwd">
+                <div class="pbox" id="pbox" style="display: none;">
+                    <p id="para-1">At Least one lowercase(a-z)</p>
+                    <p id="para-2">At Least one uppercase(A-Z)</p>
+                    <p id="para-3">Min 8 characters</p>
+                    <p id="para-4">Special symbols</p>
+                    <p id="para-5">0-9</p>
+                </div>
             </div>
             <div class="form-group">
                 <input type="submit" value="submit" id="submit">
@@ -48,48 +61,86 @@
         </form>
     </div>
 
+
     <script>
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+   let pwd=document.getElementById('pwd');
+       pwd.addEventListener('focus',function(){
+            document.getElementById('pbox').style.display="block"
+        })
 
         function validateEmail(email) {
-        return emailRegex.test(email);
-        }
+    let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+}
         document.getElementById('frm1').addEventListener('submit',function(e){
-           e.preventDefault();
-            let txt1 = document.getElementById('username');
+            e.preventDefault();
+
+            //======================Username=================
+            let username= document.getElementById('username');
+            let errorUsername = document.getElementById('er-uname');
+            if(username.value == ""){
+                
+                errorUsername.style.display="block";
+                errorUsername.innerText="UserName required";
+            }
+            else{
+                errorUsername.style.display="none";
+            }
+
+            //==================Email====================
             let email = document.getElementById('email');
-            let emailError = document.getElementById('er-email');
-             let unameError = document.getElementById('er-uname');
-            
-            console.log(txt1.value);
-
-
-            //==============username validation=======================
-             if(txt1.value == ""){
-                unameError.style.display="block";
-                unameError.innerText="Username required";
-                txt1.focus();
-             }
-             else{
-                unameError.style.display="none";
-                 
-             }
-             //===================Email validation===================
-              if(email.value === ""){
-                    emailError.style.display="block";
-                     emailError.innerText="Email required";
-              }
-              else if(validateEmail(email.value)==false){
-                 emailError.style.display="block";
-                  emailError.innerText="Enter valid Email example(abc@example.com)";
-              }
-              else{
-                 emailError.style.display="none";
-                  emailError.innerText="";
-              }
-
-             
+            let errorEmail= document.getElementById('er-email');
+            if(email.value ==""){
+                errorEmail.style.display="block";
+                errorEmail.innerText="Enter email"
+            }
+            else if(!validateEmail(email.value)){
+                errorEmail.style.display="block";
+                errorEmail.innerText="Enter valid email ex(abc@example.com)"
+            }
+            else{
+                errorEmail.style.display="none";
+              
+            }
         })
+    
+    
+    pwd.addEventListener('keyup',function(e){
+        let value= e.target.value;
+        console.log(value);
+        
+        if(/^(?=.*[A-Z]).+$/.test(value)){
+            document.getElementById('para-2').style.color="green"
+        }
+        else{
+            document.getElementById('para-2').style.color="red"
+        }
+         if(/^(?=.*[a-z]).+$/.test(value)){
+            document.getElementById('para-1').style.color="green"
+        }
+        else{
+            document.getElementById('para-1').style.color="red"
+        }
+        if(/^(?=.*[0-9]).+$/.test(value)){
+            document.getElementById('para-5').style.color="green"
+        }
+        else{
+            document.getElementById('para-5').style.color="red"
+        }
+        if( /^(?=.*[@$!%*?&]).+$/.test(value)){
+            document.getElementById('para-4').style.color="green"
+        }
+         else{
+            document.getElementById('para-4').style.color="red"
+        }
+        if(value.length>=8){
+            document.getElementById('para-3').style.color="green"
+        }
+         else{
+            document.getElementById('para-3').style.color="red"
+        }
+    })
     </script>
+   
 </body>
 </html>
