@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    
+    <script>
+        let fruits = [
+            'apple',
+            'banana',
+            'kiwi',
+            'graphs'
+        ];
+
+        console.log(fruits);
+
+       // delete(fruits[1]);
+
+        console.log(fruits);
+
+        //remove 1 index means remove banana from fruits
+
+        fruits.splice(1,1);
+        console.log(fruits);
+
+        //add element at any index 1.para=>index in which you wann add element
+        //2.para 0 indicate not delete count
+        //3.para element that you wann added
+        fruits.splice(1,0,"banana");
+         console.log(fruits);
+
+        //update element at any position
+        fruits.splice(2,1,"chiku");
+         console.log(fruits);
+
+       
+        fruits.forEach(function(item,i,fruits){
+            console.log(i);
+            
+            console.log(item.toUpperCase());
+            
+        })
+
+        console.log(fruits.indexOf('kiwi'));
+        
+        
+        
+        
+    </script>
+</body>
+</html>

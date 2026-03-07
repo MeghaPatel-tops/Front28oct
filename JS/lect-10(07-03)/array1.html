@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let fruits = [
+            'apple',
+            'banana',
+            'kiwi',
+            'graphs'
+        ];
+
+        console.log(fruits);
+        console.log(typeof(fruits));
+
+        for(let i=0;i<fruits.length;i++){
+            console.log(fruits[i]);
+            
+        }
+
+        console.log("last element array ",fruits.at(-1));
+        //LIFO (Last-In, First-Out) 
+        //push:push appends an element to the end.
+
+        fruits.push("watermallon");
+
+        console.log(fruits);
+
+        //pop:pop remove elel\ment at end
+
+        fruits.pop();
+
+        console.log(fruits);
+        
+
+        //FIFO (First-In, First-Out)
+        //unshift:add new element at start
+        fruits.unshift("watermallon");
+
+        console.log(fruits);
+
+        //shift :remove element from start
+
+        fruits.shift();
+
+        console.log(fruits);
+        
+        //For in loop used for array only
+        for(key in fruits){
+
+            console.log(`index of i=${key} value = ${fruits[key]}`);
+            
+        }
+
+        console.log([]);
+        
+        
+        
+    </script>
+</body>
+</html>
