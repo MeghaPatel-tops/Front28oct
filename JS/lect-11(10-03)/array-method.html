@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let arr = ['apple','banana','kiwi','grpahs','watermallon'];
+        let slicArr = arr.slice(2,5);
+
+        console.log(slicArr);
+        
+
+        let concatArray = ['chiku','pineple'].concat(arr);
+        console.log(concatArray);
+
+       let op1=[1,34].toString();
+        let op2=["    2",3].toString();
+      
+        console.log(op1);
+        console.log(op2);
+
+        console.log(op1+op2);
+
+        let capitalArray = arr.forEach((item,i,arr)=>{
+               console.log(item.toUpperCase());     
+        });
+
+
+        let salaryArray = [20000,30000,10000,12000,45000,23000];
+        let sum=0;
+        salaryArray.forEach((sal,i,salaryArray)=>{
+            sum =sum+sal;
+        })
+
+        console.log(sum);
+
+        
+        
+       
+        
+        
+
+
+        
+        
+        
+
+    </script>
+</body>
+</html>

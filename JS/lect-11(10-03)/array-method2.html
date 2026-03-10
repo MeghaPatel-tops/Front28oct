@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <table align="center" border="1" cellspacing="10px">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody id="prodata">
+               
+            </tbody>
+    </table>
+
+    <script>
+         let arr = ['apple','banana','kiwi','grpahs','watermallon','banana'];
+
+         let flag = arr.find((index,i)=>index==='banana');
+         console.log(flag);
+
+         let products =[
+            {
+                catname:"electronics",
+                pname:'laptop',
+                price:200000,
+                descri:"lenovo"
+            }
+            ,
+             {
+                catname:"electronics",
+                pname:'mobile',
+                price:2000,
+                descri:"Mi"
+            },
+             {
+                catname:"cloths",
+                pname:'dress',
+                price:2000,
+                descri:"punjabi dress"
+            },
+             {
+                catname:"cloths",
+                pname:'thsrt',
+                price:300,
+                descri:"Cotton"
+            },
+             {
+                catname:"home applience",
+                pname:'sofa',
+                price:30000,
+                descri:"Leather"
+            },
+             {
+                catname:"home applience",
+                pname:'Machine',
+                price:200000,
+                descri:"Sony"
+            }
+         ];
+
+         console.log(products);
+         let findPro = products.find((index,i)=>index.catname==='cloths');
+         console.log(findPro);
+
+         let filterProduct = products.filter((index,i)=>index.catname==='cloths')
+         console.log(filterProduct);
+         
+
+         function printTable(data){
+           
+              let str="";
+              data.forEach((index,i,data)=>{
+                     str+=`
+                        <tr>
+                    <td>${index.pname}</td>
+                    <td>${index.catname}</td>
+                    <td>${index.price}</td>
+                    <td>${index.descri}</td>
+                </tr>
+                     `
+              });
+              document.getElementById('prodata').innerHTML=str;
+         }
+
+         window.onload = printTable(products)
+    </script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div{
+            margin: 50px;
+            display: flex;
+            justify-content: center;
+            
+        }
+        ul li{
+            display: inline-block;   
+        }
+    </style>
+</head>
+<body>
+    
+
+    <table align="center" border="1" cellspacing="10px">
+           <div class="div" >
+                <ul>
+                    <li><button onclick="filterProduct('all')">All</button></li>
+                    <li><button onclick="filterProduct('electronics')">Electronics</button></li>
+                    <li><button onclick="filterProduct('cloths')">Cloths</button></li>
+                    <li><button onclick="filterProduct('home applience')">Home</button></li>
+                </ul>
+           </div>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody id="prodata">
+               
+            </tbody>
+    </table>
+
+    <script>
+         
+
+         let products =[
+            {
+                catname:"electronics",
+                pname:'laptop',
+                price:200000,
+                descri:"lenovo",
+                Image:'tomato.jpg'
+            }
+            ,
+             {
+                catname:"electronics",
+                pname:'mobile',
+                price:2000,
+                descri:"Mi"
+            },
+             {
+                catname:"cloths",
+                pname:'dress',
+                price:2000,
+                descri:"punjabi dress"
+            },
+             {
+                catname:"cloths",
+                pname:'thsrt',
+                price:300,
+                descri:"Cotton"
+            },
+             {
+                catname:"home applience",
+                pname:'sofa',
+                price:30000,
+                descri:"Leather"
+            },
+             {
+                catname:"home applience",
+                pname:'Machine',
+                price:200000,
+                descri:"Sony"
+            }
+         ];
+
+
+         function filterProduct(cat){
+            let filterArray;
+            if(cat == 'all'){
+                filterArray=products;
+            }
+            else{
+                  filterArray = products.filter((index,i)=>{
+                   if(index.catname===cat){
+                       return index
+                   }
+             })
+             
+            }
+             
+            printTable(filterArray)
+         }
+       
+
+         function printTable(data){
+           
+              let str="";
+              data.forEach((index,i,data)=>{
+                     str+=`
+                        <tr>
+                    <td>${index.pname}</td>
+                    <td>${index.catname}</td>
+                    <td>${index.price}</td>
+                    <td>${index.descri}</td>
+                    <td><img src=${index.Image ?? ""} alt=""></td>
+                </tr>
+                     `
+              });
+              document.getElementById('prodata').innerHTML=str;
+         }
+
+         printTable(products)
+    </script>
+    
+</body>
+</html>
