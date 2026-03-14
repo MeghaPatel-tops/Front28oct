@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let user={
+            name:'megha',
+            email:'megha@gmil.com'
+        }
+
+        console.log(Object.keys(user));
+          console.log(Object.values(user));
+            console.log(Object.entries(user));
+
+        user.contact=9979897;
+        user['address']='101 main street surat'
+        console.log(user);
+
+        let myMap = new Map();
+        myMap.set('name','megha');
+        myMap.set(true,'true');
+
+        console.log(myMap);
+
+        console.log(myMap.get('name'));
+
+        console.log(myMap.entries());
+
+        let mySet = new Set();
+        mySet.add('test set');
+
+       console.log(mySet);
+       
+        
+        
+       let product ={
+           pname:'laptop',
+           isAvil:true,
+           price:12000
+       }
+
+       let {isAvil,pname}=product;
+
+      
+       
+       console.log((isAvil==true?'product avilble':'not'));
+
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let object={
+            name:'megha',
+            email:'m@gmail.com',
+            pwd:'123',
+            address:'101 surat'
+        };
+
+        let jsonStr = JSON.stringify(object);
+        console.log(jsonStr);
+
+        console.log(jsonStr.name);
+        
+
+        let jsonObj = JSON.parse(jsonStr);
+        console.log(jsonObj);
+        console.log(jsonObj.name);
+        
+        
+
+    </script>
+</body>
+</html>

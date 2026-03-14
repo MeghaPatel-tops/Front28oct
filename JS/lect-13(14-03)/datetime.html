@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let nowTime = new Date();
+        let year = nowTime.getFullYear();
+        let month = String(nowTime.getMonth() + 1).padStart(2, '0');
+        let day = String(nowTime.getDate()).padStart(2, '0');
+
+        let hours = String(nowTime.getHours()).padStart(2, '0');
+        let minutes = String(nowTime.getMinutes()).padStart(2, '0');
+        let seconds = String(nowTime.getSeconds()).padStart(2, '0');
+
+        let formattedDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+
+        console.log(formattedDate);
+        
+        function setTask(){
+            let taskname = document.getElementById('tname').value;
+            let date1 = document.getElementById('tdate').value;
+            let date2=document.getElementById('tdate1').value;
+
+            console.log(taskname);
+            console.log(date1);
+
+            let old = new Date(date1);
+            let newDate = old.setDate(old.getDate() + 3);
+            console.log(old);
+
+            let newDay = old.getDate();
+            let monthStr = old.toLocaleString('default', { month: 'short' });
+
+            let str=`Your Due Date of Task is ${newDay} of ${monthStr}`;
+            alert(str)
+             
+
+          let datediff = diffSubtract(new Date(date1),new Date(date2))/(1000 * 60 * 60 * 24);
+
+          alert(datediff)
+
+
+            
+            
+            
+
+        }
+
+        function diffSubtract(date1, date2) {
+            return date2 - date1;
+            }
+
+    </script>
+
+    <fieldset>
+        <legend>
+            task assignment
+        </legend>
+        <label for=""></label>
+        <input type="text" name="" id="tname">
+        <br><br><br>
+        <label for="">Date1</label>
+        <input type="date" name="" id="tdate">
+         <br><br><br>
+         <label for="">Date2</label>
+         <input type="date" name="" id="tdate1">
+         <br><br><br>
+        <button onclick="setTask()">Submit</button>
+    </fieldset>
+    
+</body>
+</html>
