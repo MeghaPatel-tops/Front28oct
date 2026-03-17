@@ -32,10 +32,46 @@
         </div>
     </div>
 </div>
+<div class="container mt-5">
+  <h1>Users Info</h1>
+     <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">UserName</th>
+      <th scope="col">Email</th>
+      
+    </tr>
+  </thead>
+  <tbody id="result">
+    
+  </tbody>
+</table>
+</div>
 
 
 <script>
     let userData = [];
+
+    function getUsers(){
+          let users = localStorage.getItem('users');
+          users = JSON.parse(users)
+          console.log(users);
+          let str="";
+         users.forEach((index,i,users)=>{
+            str+=`
+                    <tr>
+              <th scope="row">${i+1}</th>
+              <td>${index.username}</td>
+              <td>${index.email}</td>
+            </tr>
+  
+            `
+         })
+         document.getElementById('result').innerHTML=str;
+          
+          
+    }
     document.getElementById('reg').addEventListener('submit',(e)=>{
         e.preventDefault()
         let username =document.getElementById('username')
@@ -47,7 +83,20 @@
             pwd:pwd.value,
          }
 
-         console.log(userObj);
+         let userCheck = localStorage.getItem('users');
+         if(userCheck){
+              let preUsers = JSON.parse(localStorage.getItem('users'));
+              console.log(preUsers);
+
+              preUsers.push(userObj);
+              console.log(preUsers);
+              localStorage.setItem('users',JSON.stringify(preUsers));
+              
+              
+         }
+
+      else{
+              console.log(userObj);
          userData.push(userObj);
 
          username.value="";
@@ -55,9 +104,17 @@
          pwd.value=""
 
          console.log(userData);
+
+         localStorage.setItem('users',JSON.stringify(userData));
+      }
+
+      getUsers();
          
          
     })
+
+
+    window.onload=getUsers()
 </script>
 </body>
 </html>
