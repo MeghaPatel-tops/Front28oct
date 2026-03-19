@@ -25,9 +25,11 @@
     <div class="mb-3">
       <label for="pwd">Password:</label>
       <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+      <input type="hidden" name="" id="userid" >
     </div>
    
     <button type="submit" class="btn btn-primary">Submit</button>
+    
   </form>
         </div>
     </div>
@@ -40,6 +42,8 @@
       <th scope="col">#</th>
       <th scope="col">UserName</th>
       <th scope="col">Email</th>
+      <th colspan="2">Action</th>
+     
       
     </tr>
   </thead>
@@ -64,6 +68,9 @@
               <th scope="row">${i+1}</th>
               <td>${index.username}</td>
               <td>${index.email}</td>
+              <td><button class="btn btn-danger" onclick="userDel(${i})">Delete</button></td>
+               <td><button class="btn btn-success" onclick="userEdit(${i})">Edit</button></td>
+
             </tr>
   
             `
@@ -77,41 +84,74 @@
         let username =document.getElementById('username')
         let email =document.getElementById('email');
         let pwd = document.getElementById('pwd');
+        let userid = document.getElementById('userid').value;
          let userObj={
             username:username.value,
             email:email.value,
             pwd:pwd.value,
          }
-
-         let userCheck = localStorage.getItem('users');
-         if(userCheck){
-              let preUsers = JSON.parse(localStorage.getItem('users'));
-              console.log(preUsers);
-
-              preUsers.push(userObj);
-              console.log(preUsers);
-              localStorage.setItem('users',JSON.stringify(preUsers));
-              
-              
-         }
-
-      else{
+         //===========for update======================
+         if(userid && userid != ""){
+              alert('update')
               console.log(userObj);
-         userData.push(userObj);
+              let preUsers = JSON.parse(localStorage.getItem('users'));
+              preUsers.splice(userid,1,userObj);
+              localStorage.setItem('users',JSON.stringify(preUsers));
+              getUsers();
+            
+         }
+         //=======================for insert===========
+         else{
+             let userCheck = localStorage.getItem('users');
+              if(userCheck){
+                    let preUsers = JSON.parse(localStorage.getItem('users'));
+                    console.log(preUsers);
 
-         username.value="";
-         email.value="";
-         pwd.value=""
+                    preUsers.push(userObj);
+                    console.log(preUsers);
+                    localStorage.setItem('users',JSON.stringify(preUsers));
+                    
+                    
+                        }
 
-         console.log(userData);
+                else{
+                        console.log(userObj);
+                  userData.push(userObj);
 
-         localStorage.setItem('users',JSON.stringify(userData));
-      }
+                  username.value="";
+                  email.value="";
+                  pwd.value=""
 
+                  console.log(userData);
+
+                  localStorage.setItem('users',JSON.stringify(userData));
+                }
+
+        }
+
+         
       getUsers();
          
          
     })
+
+    function userDel(id){
+         let preUsers = JSON.parse(localStorage.getItem('users'));
+          preUsers.splice(id,1);
+         localStorage.setItem('users',JSON.stringify(preUsers));
+         getUsers();
+    }
+
+    function userEdit(id){
+        alert(id)
+         let preUsers = JSON.parse(localStorage.getItem('users'));
+         let EditUser = preUsers[id];
+         console.log(EditUser);
+         document.getElementById('username').value=EditUser.username;
+         document.getElementById('email').value=EditUser.email;
+         document.getElementById('pwd').value=EditUser.pwd;
+          document.getElementById('userid').value=id;
+    }
 
 
     window.onload=getUsers()
