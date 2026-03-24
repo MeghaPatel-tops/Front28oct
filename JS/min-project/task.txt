@@ -1,0 +1,8 @@
+
+Requirements
+Make a questions array of objects:
+{ question, options:[], answer }
+Display one question at a time
+On clicking option → check correct/incorrect
+Show score at the end
+Use array methods where needed (map/forEach)

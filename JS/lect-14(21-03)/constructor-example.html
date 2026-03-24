@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        function User(name,sname){
+            this.name=name;
+            this.sname=sname;
+
+            this.printUser= function(){
+                console.log(`welcome:${this.name}`);
+                
+            }
+        }
+
+        let u1 = new User('vruti','shah');
+        u1.printUser();
+
+        let u2= new User('subodh','tandel');
+        u2.printUser();
+
+
+        const obj = {
+            name: "Megha",
+            greet() {
+                return ()=>console.log("abc",this.name);
+            }
+            };
+
+const fn = obj.greet;
+  fn()();
+  
+   
+    </script>
+</body>
+</html>
