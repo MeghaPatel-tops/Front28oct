@@ -15,17 +15,18 @@
             <div class="card shadow-sm p-4">
                 
                 <!-- Question Text -->
-                <h5 class="fw-bold mb-3" id="question">1. What is the capital of India?</h5>
+               
 
              
               <form method="post" id="frm">
+                 <h5 class="fw-bold mb-3" id="question">1. What is the capital of India?</h5>
                   <div id="checkboxid">
 
                 </div>
                 <input type="hidden" name="" id="answer">
                 <input type="submit" value="Submit" id="ansSubmit">
               </form>
-
+            <div id="res"></div>
                 
 
             </div>
@@ -33,20 +34,64 @@
         </div>
     </div>
     <script>
+        let i=0;
+        
+        let result=[];
+        function printResult(){
+            document.getElementById('frm').style.display="none";
+            str="<h1>Your Score</h1>"
+            let count=0;
+            result.map((index,i)=>{
+                if(index.flag==true){
+                    count++;
+                }
+                str+=`
+                    <p>Question:${index.question} = ${index.flag}</p>
+                `
+            })  
+            str+=`<h3>You Got ${count}/5</h3>`
+            document.getElementById('res').innerHTML=str;
 
+            
+        }
+       
         document.getElementById('frm').addEventListener('submit',function(e){
+           
+            
             e.preventDefault();
-
+          
             let ans = document.querySelector('input[name="op"]:checked')?.value;
-            console.log(ans);
+           
 
             let hiddenAns = document.getElementById('answer').value;
+            let resultObj;
             if(hiddenAns==ans){
-                alert("Correct")
+                //alert("Correct")
+                resultObj={
+                    question:i+1,
+                    flag:true
+                }
             }
             else{
-                alert("incorrect")
+                //alert("incorrect")
+                resultObj={
+                    question:i+1,
+                    flag:false
+                }
             }
+
+            result.push(resultObj)
+           
+            if(i==4){
+                    
+            }
+            else{
+            i++;
+            console.log("after i=",i);
+             loadQuestion(i);
+            }
+            
+  
            
         })
 
@@ -66,15 +111,16 @@
             document.getElementById('checkboxid').innerHTML=str
             document.getElementById('answer').value=data.answer;
         }
+
         function loadQuestion(no){
             let quizArray = localStorage.getItem('quiz');
             quizArray = JSON.parse(quizArray)
-            console.log(quizArray[no]);
+           
             prePareQuestion(quizArray[no])
             
         }
 
-        loadQuestion(0);
+        loadQuestion(i);
     </script>
 </body>
 </html>
