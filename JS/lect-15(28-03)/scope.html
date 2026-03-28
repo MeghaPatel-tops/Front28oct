@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //let const => block scope
+        function printNum(){
+            let num = 123;
+            if(num % 2== 0){
+                let msg="even";
+            }
+            else{
+                let msg="odd";
+            }
+            //console.log(msg);
+            //console.log(msg);=>cannpt access bcpz msg has local block scope
+            
+            
+        }
+
+         function printNum1(){
+            let num = 123;
+            if(num % 2== 0){
+                var msg="even";
+            }
+            else{
+                var msg="odd";
+            }
+            console.log(msg); 
+        }
+
+
+        function outerFunction(x,y){
+             
+               return function innerFunction(){
+                let s=x+y;
+                    console.log('addition=',s);
+                    
+               }
+        }
+
+        let innCall=  outerFunction(100,200) 
+
+       console.log(innCall);
+       innCall();
+        
+        
+
+       
+        
+
+        printNum();
+         printNum1();
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //5!  = 5*4!  5*4*3!  5*4*3*2! 
+        
+        function factFind(num){
+            if(num==1){
+                return 1;
+            }
+            f= num*factFind(num-1);
+            return f;
+        }
+
+        console.log(factFind(5));
+
+
+        //rest parameter example
+        function add(...args){
+            let sum= 0;
+            for(i=0;i<args.length;i++){
+                sum = sum +args[i];
+            }
+            return sum
+        }
+
+        console.log(add(1,2));
+
+          console.log(add(1,2,3,4,5));
+
+          //spread 
+
+
+        let arr=[3,5,1]
+        //spread turns array into a list of arguments
+          console.log(Math.max(...arr));
+
+          let str= 'megha'
+          console.log(Array.from(str));
+          
+
+          rev=0;
+          function revNum(num){//1234
+            
+               if(num==0){
+                  return 1;
+               }
+               rem = num %10;
+               rev= rev * 10+ rem;
+               //console.log(rev);
+               
+               num =parseInt(num/10);//123.4
+               revNum(num)
+
+               return rev
+               
+          }
+
+          console.log(revNum(1234));
+          
+        
+        
+
+    </script>
+</body>
+</html>
