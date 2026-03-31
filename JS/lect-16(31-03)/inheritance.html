@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        class Account{
+            constructor(holder,email,adhar,bal){
+                this.holder=holder;
+                this.email=email;
+                this.adhar=adhar;
+                this.bal=bal
+            }
+            printInfo(){
+                let str=`
+                    Holder Name:${this.holder}
+                    Email:${this.email}
+                    AdharId:${this.adhar}
+                    Balace:${this.bal}
+                `
+                console.log(str);
+                
+            }
+        }
+
+        class Saving extends Account{
+                constructor(per,holder,email,adhar,bal){
+                        super(holder,email,adhar,bal)
+                         this.per=per
+                }
+
+                calBal(){
+                    let newBal = 2000 + ((2000*2)/100);
+                    console.log(newBal);
+                    
+                }
+        }
+
+        let aac1 = new Saving(2,'vruti','v@gmail.com','v6677hjhjjj',2000);
+        aac1.printInfo();
+        aac1.calBal();
+
+    </script>
+</body>
+</html>

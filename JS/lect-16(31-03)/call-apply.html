@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //call 
+
+        function  msgPrint(error){
+            let str=`
+                error= ${error}
+                msg:${this.msg}
+                id:${this.inputid};
+            
+            `
+            console.log(str);
+            
+        }
+        let userValidation ={
+            msg:"invalid UserName",
+            id:"username"
+        }
+
+        let PwdValidation ={
+            msg:"invalid Password",
+            id:"username"
+        }
+
+
+        msgPrint.call(userValidation,"Username not valid");
+        msgPrint.call(PwdValidation,"Password not valid")
+
+    </script>
+    
+</body>
+</html>

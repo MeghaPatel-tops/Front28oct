@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .clock{
+            background-color: brown;
+            color: white;
+            padding: 50px 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="clock" id="clock">
+
+    </div>
+
+
+    <script>
+        console.log("first");
+
+        setTimeout(()=>{
+            console.log("sec");
+        },2000)
+
+        console.log("Third");
+
+        // setInterval(()=>{
+        //     console.log("set interval called");
+            
+        // },3000)
+
+        function digitalClock(){
+             let nowTime = new Date();
+        let year = nowTime.getFullYear();
+        let month = String(nowTime.getMonth() + 1).padStart(2, '0');
+        let day = String(nowTime.getDate()).padStart(2, '0');
+
+        let hours = String(nowTime.getHours()).padStart(2, '0');
+        let minutes = String(nowTime.getMinutes()).padStart(2, '0');
+        let seconds = String(nowTime.getSeconds()).padStart(2, '0');
+
+        let formattedDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+
+        document.getElementById('clock').innerText=formattedDate;
+        }
+
+        setInterval(digitalClock,1000)
+
+        
+        
+        
+        
+    </script>
+</body>
+</html>

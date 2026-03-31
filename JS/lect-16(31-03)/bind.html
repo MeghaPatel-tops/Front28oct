@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        let user={
+            name:'megha',
+            sayHi:function(){
+                console.log(`welcome:${this.name}`);
+                
+            }
+        }
+
+      //setTimeout(  user.sayHi,2000); undefine name
+
+      setTimeout(()=>{
+        user.sayHi()
+      },2000)
+
+
+
+      //bind method
+
+      let product={
+          pname:'sugar',
+          price:50
+      }
+
+      function printProduct(){
+           let str=` ProductName=${this.pname} and price=${this.price}`
+           console.log(str);
+           
+      }
+
+      let bindFun = printProduct.bind(product);
+     
+
+      setTimeout(bindFun,2000)
+      
+
+    </script>
+</body>
+</html>
