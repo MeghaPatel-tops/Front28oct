@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        class Maths{
+            static pi=3.14;
+            #privateData="privatedata"
+            constructor(x){
+                this.x=x;
+            }
+
+            areaofCircle(){
+                let area = Maths.pi*this.x*this.x;
+                console.log(area);
+                Maths.printHello()
+                console.log(this.#privateData);
+                
+            }
+            static printHello(){
+                console.log('welocme to tops tech');
+                
+            }
+        }
+        let m1= new Maths(2);
+        console.log(m1.x);
+        m1.areaofCircle()
+
+
+
+        let m2= new Maths(1000);
+        console.log(m2.x);
+        m2.areaofCircle();
+
+        
+        
+        
+        
+    </script>
+</body>
+</html>
