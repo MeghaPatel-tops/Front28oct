@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        async function  getPost(){
+            try {
+                let res= await fetch('https://jsonplaceholder.typicode.com/posts');
+               let result =await res.json();
+               console.log(result);
+               
+            } catch (error) {
+                console.log(error);
+                
+            }
+        }
+         async function  getComment(){
+            try {
+                let res= await fetch('https://jsonplaceholder.typicode.com/comments');
+               let result =await res.json();
+               console.log(result);
+               
+            } catch (error) {
+                console.log(error);
+                
+            }
+        }
+         async function  getAlbum(){
+            try {
+                let res= await fetch('https://jsonplaceholder.typicode.com/albums');
+               let result =await res.json();
+               console.log(result);
+               
+            } catch (error) {
+                console.log(error);
+                
+            }
+        }
+        getPost();
+        getComment();
+        getAlbum();
+    </script>
+</body>
+</html>
